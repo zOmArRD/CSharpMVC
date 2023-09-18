@@ -96,7 +96,7 @@ public class DbUsuario
     {
         try
         {
-            using var connection = new MySqlConnection("YourConnectionStringHere");
+            using var connection = new MySqlConnection("Server=127.0.0.1;Port=3306;Database=appmvc;User=root;Password=omar;");
             connection.Open();
 
             var query = "SELECT * FROM Agendas WHERE IdUsuario = @IdUsuario";
@@ -136,7 +136,7 @@ public class DbUsuario
     {
         try
         {
-            using var connection = new MySqlConnection("YourConnectionStringHere");
+            using var connection = new MySqlConnection("Server=127.0.0.1;Port=3306;Database=appmvc;User=root;Password=omar;");
             connection.Open();
 
             var query = "INSERT INTO Agendas (Nombre, Telefono, Direccion, IdUsuario) " +
@@ -163,7 +163,7 @@ public class DbUsuario
     {
         try
         {
-            using var connection = new MySqlConnection("YourConnectionStringHere");
+            using var connection = new MySqlConnection("Server=127.0.0.1;Port=3306;Database=appmvc;User=root;Password=omar;");
             connection.Open();
 
             var query = "UPDATE Agendas SET Nombre = @Nombre, Telefono = @Telefono, " +
@@ -190,7 +190,7 @@ public class DbUsuario
     {
         try
         {
-            using var connection = new MySqlConnection("YourConnectionStringHere");
+            using var connection = new MySqlConnection("Server=127.0.0.1;Port=3306;Database=appmvc;User=root;Password=omar;");
             connection.Open();
 
             var query = "DELETE FROM Agendas WHERE IdAgenda = @IdAgenda";
@@ -213,7 +213,7 @@ public class DbUsuario
     {
         try
         {
-            using var connection = new MySqlConnection("YourConnectionStringHere");
+            using var connection = new MySqlConnection("Server=127.0.0.1;Port=3306;Database=appmvc;User=root;Password=omar;");
             connection.Open();
 
             var query = "SELECT * FROM Agendas WHERE IdAgenda = @IdAgenda";

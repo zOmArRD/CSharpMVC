@@ -1,15 +1,11 @@
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.Extensions.Options;
+using CSharpMVC.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
-{
-    options.LoginPath = "/Acceso/Login";
-});
+builder.Services.AddScoped<DbUsuario>();
 
 var app = builder.Build();
 
@@ -26,7 +22,6 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

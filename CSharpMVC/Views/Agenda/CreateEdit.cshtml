@@ -1,0 +1,30 @@
+﻿@model Agenda
+
+<h2>@(Model.IdAgenda == 0 ? "Crear Nueva Agenda" : "Editar Agenda")</h2>
+
+<form asp-action="Save">
+    <input type="hidden" asp-for="IdAgenda"/>
+
+    <div class="form-group">
+        <label asp-for="Nombre" class="control-label">Nombre</label>
+        <input asp-for="Nombre" class="form-control"/>
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Telefono" class="control-label">Teléfono</label>
+        <input asp-for="Telefono" class="form-control"/>
+        <span asp-validation-for="Telefono" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Direccion" class="control-label">Dirección</label>
+        <input asp-for="Direccion" class="form-control"/>
+        <span asp-validation-for="Direccion" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>

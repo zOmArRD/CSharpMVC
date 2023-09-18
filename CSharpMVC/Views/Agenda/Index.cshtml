@@ -1,0 +1,32 @@
+﻿@model List<Agenda>
+
+<h2>Lista de Agendas</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Crear Nueva Agenda</a>
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Dirección</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var agenda in Model)
+    {
+        <tr>
+            <td>@agenda.Nombre</td>
+            <td>@agenda.Telefono</td>
+            <td>@agenda.Direccion</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@agenda.IdAgenda" class="btn btn-primary">Editar</a>
+                <a asp-action="Delete" asp-route-id="@agenda.IdAgenda" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_LayoutLogin";
+}
+
+<h2>Create account</h2>
+
+<div class="row">
+    <div class="col-sm-6">
+        <form action="@Url.Action("Register", "Acceso")" method="post" style="padding: 10px">
+            <div class="col-form-label">
+                <label>Nombre:</label>
+                <input class="form-control" type="text" name="nombre" required="required"/>
+            </div>
+
+            <div class="col-form-label">
+                <label>Correo:</label>
+                <input class="form-control" type="email" name="correo" required="required"/>
+            </div>
+
+            <div class="col-form-label">
+                <label>Contraseña:</label>
+                <input class="form-control" type="password" name="clave" required="required"/>
+            </div>
+
+            <button type="submit" class="btn btn-success">Create Account</button>
+            <a asp-action="Login" asp-controller="Acceso" class="btn btn-dark">Cancel</a>
+        </form>
+    </div>
+</div>
